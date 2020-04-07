@@ -1,27 +1,4 @@
-
-<div class="col-xl-4 col-lg-5">
-    <div class="card shadow mb-4">
-      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Types  Overview</h6>
-      </div>
-      <div class="card-body">
-        <div class="chart-pie pt-4 pb-2">
-
-          <canvas baseChart
-            [data]="pieChartData"
-            [chartType]="pieCharType"
-            [colors]="pieChartColors"
-            [options]="pieChartOptions"
-            [labels]="pieChartlabels"
-          ></canvas>
-          
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="col-xl-4 col-lg-5">
+ <div class="col-xl-4 col-lg-5">
     <div class="card shadow mb-4">
       <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
         <h6 class="m-0 font-weight-bold text-primary">Issue Overview</h6>
@@ -29,21 +6,23 @@
       <div class="card-body">
         <div class="chart-pie pt-4 pb-2">
           <canvas baseChart
-        [datasets]="barChartData"
-        [labels]="barChartlabels"
-        [options]="barChartOptions"
-        [chartType]="barCharType"
-        [colors]="pieChartColors1"></canvas>
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          [colors]="pieChartColors">
+        </canvas>
         </div>
         <div class="mt-4 text-center small">
           <span class="mr-2">
-            <i class="fas fa-circle text-success"></i> Task
+            <i class="fas fa-circle text-primary"></i> To Do
           </span>
           <span class="mr-2">
-            <i class="fas fa-circle text-primary"></i> Bug
+            <i class="fas fa-circle text-warning"></i> Staging
           </span>
           <span class="mr-2">
-            <i class="fas fa-circle text-info"></i> Document
+            <i class="fas fa-circle text-success"></i> RP
           </span>
         </div>
       </div>
