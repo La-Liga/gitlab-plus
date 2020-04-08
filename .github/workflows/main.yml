@@ -4,6 +4,17 @@ on: push
 jobs:
   lint:
     name: Lint frontend
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    strategy:
+      - matrix:
+        node-version: [13.x]
+
     steps:
       - uses: actions/checkout@v1
+
+      - name: Node $
+        uses: actions/setup-node@v1
+        with:
+          node-version: $
+
+      - name: npm install && npm run lint
