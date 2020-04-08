@@ -18,5 +18,8 @@ jobs:
 
       - name: npm install && npm run lint
         run: |
+          pwd
+          ls
+          cd front
           npm install
           npm run lint
