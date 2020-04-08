@@ -14,6 +14,7 @@ import { CardQuantitativoSecundarioComponent } from './card-quantitativo-secunda
 import { IssueOverviewComponent } from './issue-overview/issue-overview.component';
 import { QuantidadeTelasOverviewComponent } from './quantidade-telas-overview/quantidade-telas-overview.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { IssuesScreenComponent } from './issues-screen/issues-screen.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     CardQuantitativoSecundarioComponent,
     IssueOverviewComponent,
     QuantidadeTelasOverviewComponent,
-    NavBarComponent
+    NavBarComponent,
+    IssuesScreenComponent
   ],
   imports: [
     BrowserModule,
