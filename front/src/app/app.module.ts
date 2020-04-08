@@ -12,6 +12,7 @@ import { GraficoPieComponent } from './grafico-pie/grafico-pie.component';
 import { CardQuantitativoPrincipalComponent } from './card-quantitativo-principal/card-quantitativo-principal.component';
 import { CardQuantitativoSecundarioComponent } from './card-quantitativo-secundario/card-quantitativo-secundario.component';
 import { IssueOverviewComponent } from './issue-overview/issue-overview.component';
+import { QuantidadeTelasOverviewComponent } from './quantidade-telas-overview/quantidade-telas-overview.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { IssueOverviewComponent } from './issue-overview/issue-overview.componen
     GraficoPieComponent,
     CardQuantitativoPrincipalComponent,
     CardQuantitativoSecundarioComponent,
-    IssueOverviewComponent
+    IssueOverviewComponent,
+    QuantidadeTelasOverviewComponent
   ],
   imports: [
     BrowserModule,
