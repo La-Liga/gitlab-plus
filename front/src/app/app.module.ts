@@ -13,6 +13,7 @@ import { CardQuantitativoPrincipalComponent } from './card-quantitativo-principa
 import { CardQuantitativoSecundarioComponent } from './card-quantitativo-secundario/card-quantitativo-secundario.component';
 import { IssueOverviewComponent } from './issue-overview/issue-overview.component';
 import { QuantidadeTelasOverviewComponent } from './quantidade-telas-overview/quantidade-telas-overview.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { QuantidadeTelasOverviewComponent } from './quantidade-telas-overview/qu
     CardQuantitativoPrincipalComponent,
     CardQuantitativoSecundarioComponent,
     IssueOverviewComponent,
-    QuantidadeTelasOverviewComponent
+    QuantidadeTelasOverviewComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
