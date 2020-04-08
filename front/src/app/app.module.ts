@@ -15,6 +15,7 @@ import { IssueOverviewComponent } from './issue-overview/issue-overview.componen
 import { QuantidadeTelasOverviewComponent } from './quantidade-telas-overview/quantidade-telas-overview.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { IssuesScreenComponent } from './issues-screen/issues-screen.component';
+import { IssuesComponent } from './pages/issues/issues.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { IssuesScreenComponent } from './issues-screen/issues-screen.component';
     IssueOverviewComponent,
     QuantidadeTelasOverviewComponent,
     NavBarComponent,
-    IssuesScreenComponent
+    IssuesScreenComponent,
+    IssuesComponent
   ],
   imports: [
     BrowserModule,
