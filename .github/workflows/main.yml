@@ -6,15 +6,17 @@ jobs:
     name: Lint frontend
     runs-on: ubuntu-latest
     strategy:
-      - matrix:
+      matrix:
         node-version: [13.x]
 
     steps:
       - uses: actions/checkout@v1
-
-      - name: Node $
+      - name: Use Node ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
-          node-version: $
+          node-version: ${{ matrix.node_version }}
 
       - name: npm install && npm run lint
+        run: |
+          npm install
+          npm run lint
