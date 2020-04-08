@@ -1,0 +1,9 @@
+name: Gitlab Plus - Workflow
+on: push
+
+jobs:
+  lint:
+    name: Lint frontend
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
