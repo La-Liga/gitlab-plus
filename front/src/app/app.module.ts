@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { GraficoBarChartComponent } from './grafico-bar-chart/grafico-bar-chart.component';
 import { GraficoPieComponent } from './grafico-pie/grafico-pie.component';
 import { CardQuantitativoPrincipalComponent } from './card-quantitativo-principal/card-quantitativo-principal.component';
 import { CardQuantitativoSecundarioComponent } from './card-quantitativo-secundario/card-quantitativo-secundario.component';
@@ -15,18 +16,19 @@ import { IssueOverviewComponent } from './issue-overview/issue-overview.componen
 import { QuantidadeTelasOverviewComponent } from './quantidade-telas-overview/quantidade-telas-overview.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
+    GraficoBarChartComponent,
     GraficoPieComponent,
     CardQuantitativoPrincipalComponent,
     CardQuantitativoSecundarioComponent,
     IssueOverviewComponent,
     QuantidadeTelasOverviewComponent,
     NavBarComponent
+
   ],
   imports: [
     BrowserModule,
