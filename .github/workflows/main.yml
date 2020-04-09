@@ -1,0 +1,23 @@
+name: Gitlab Plus - Workflow
+on: pull_request
+
+jobs:
+  lint:
+    name: Lint frontend
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [13.x]
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: npm install && npm run lint
+        run: |
+          cd front
+          npm install
+          npm run lint
