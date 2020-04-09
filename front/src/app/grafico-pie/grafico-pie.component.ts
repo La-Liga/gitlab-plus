@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GraficoPieComponent implements OnInit {
 
-  informacaoapi: Array<number> = [26, 48,26];
+  informacaoapi: Array<number> = [26, 48, 26];
+
   public pieChartOptions = {
     responsive: true,
     legend: {
@@ -17,14 +18,11 @@ export class GraficoPieComponent implements OnInit {
   };
   public pieChartData = this.informacaoapi;
   public pieChartType = 'pie';
-  public pieChartLabels = ['Task','Bug','Document']
-  public pieChartColors =[
-      {
-        backgroundColor: ['rgb(92, 184, 92)', 'rgb(217, 83, 79)', 'rgb(91, 192, 222)'],
-      },
-    ];
-    // public pieChartLabels: Label[] = ['Task', 'Bug', 'Document'];
-
+  public pieChartLabels = ['Task', 'Bug', 'Document'];
+  public pieChartColors = [{
+      backgroundColor: ['rgb(92, 184, 92)', 'rgb(217, 83, 79)', 'rgb(91, 192, 222)']
+    },
+  ];
 
   constructor() { }
 

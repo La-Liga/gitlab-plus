@@ -2,12 +2,13 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ChartsModule } from 'ng2-charts'
+import { ChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { GraficoBarChartComponent } from './grafico-bar-chart/grafico-bar-chart.component';
 import { GraficoPieComponent } from './grafico-pie/grafico-pie.component';
 import { CardQuantitativoPrincipalComponent } from './card-quantitativo-principal/card-quantitativo-principal.component';
 import { CardQuantitativoSecundarioComponent } from './card-quantitativo-secundario/card-quantitativo-secundario.component';
@@ -18,12 +19,12 @@ import { IssuesScreenComponent } from './issues-screen/issues-screen.component';
 import { IssuesComponent } from './pages/issues/issues.component';
 import { FilterIssuesComponent } from './filter-issues/filter-issues.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
+    GraficoBarChartComponent,
     GraficoPieComponent,
     CardQuantitativoPrincipalComponent,
     CardQuantitativoSecundarioComponent,
