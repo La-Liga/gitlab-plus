@@ -16,6 +16,7 @@ import { QuantidadeTelasOverviewComponent } from './quantidade-telas-overview/qu
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { IssuesScreenComponent } from './issues-screen/issues-screen.component';
 import { IssuesComponent } from './pages/issues/issues.component';
+import { FilterIssuesComponent } from './filter-issues/filter-issues.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { IssuesComponent } from './pages/issues/issues.component';
     QuantidadeTelasOverviewComponent,
     NavBarComponent,
     IssuesScreenComponent,
-    IssuesComponent
+    IssuesComponent,
+    FilterIssuesComponent
   ],
   imports: [
     BrowserModule,
