@@ -1,28 +1,23 @@
 <app-nav-bar></app-nav-bar>
-
+​
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
         <div class="container-fluid">
-
             <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                <h1 class="h3 mb-0 text-gray-800" style="margin-left: 12px;">Dashboard</h1>
             </div>
-
+​
             <div class="row">
                 <div class="col-md-3">
                     <div class="row">
-
-
                         <!-- compenentes de telas -->
-                        <div class="col-xl-12 col-md-12 mb-4">          
-                                            <app-card-quantitativo-principal></app-card-quantitativo-principal>              
-                        </div>
-
-                        <!-- !compenentes de telas -->
-
+                        <div class="col-xl-12 col-md-12 mb-4">
+                                <app-card-quantitativo-principal></app-card-quantitativo-principal> 
+                        </div>    
+​
                     </div>
                 </div>
-
+​                  <!-- compenentes de telas -->
                 <div class="col-xl-8 col-md-9">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -36,16 +31,16 @@
                     </div>
                 </div>
             </div>
-
+​
             <div class="row">
-                <div class="col-md-2">
                     <!-- compenentes de telas -->
-                    <div class="row">         
-                         <app-card-quantitativo-secundario></app-card-quantitativo-secundario>          
-                    </div>
-                    <!-- !compenentes de telas -->
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 mb-4" style="padding-left: 20px;">
+                            <app-card-quantitativo-secundario></app-card-quantitativo-secundario>
+                        </div>
+                    </div>   
 
-                </div>
+​                <!-- !compenentes de telas -->
                 <div class="col-md-6">
                     <div class="card shadow mb-2">
                         <div class="card-header py-3 d-flex flex-row  justify-content-between">
@@ -56,6 +51,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- !compenentes de telas --> 
                 <div class="col-md-4">
                     <app-grafico-pie></app-grafico-pie>
                 </div>
