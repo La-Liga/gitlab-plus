@@ -3,7 +3,7 @@ import { Colors } from '../../models/enuns/colors.enum';
 import { Labels } from '../../models/enuns/labels.enum';
 
 @Component({
-  selector: 'quantity-by-labels',
+  selector: 'app-quantity-by-labels',
   templateUrl: './quantity-by-labels.component.html',
   styleUrls: ['./quantity-by-labels.component.css']
 })
@@ -13,9 +13,9 @@ export class QuantityByLabelsComponent implements OnInit {
   @Input() color: string = Colors.Primary;
   @Input() label: string = Labels.Todo;
 
-  quantity: number = 0;
-  classColorBorder: string = 'border-left-';
-  classColorText: string = 'text-';
+  quantity = 0;
+  classColorBorder = 'border-left-';
+  classColorText = 'text-';
 
   constructor() {}
 
