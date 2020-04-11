@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Colors } from '../../models/enuns/colors.enum';
+import { Labels } from '../../models/enuns/labels.enum';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,6 +12,14 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  get colors() {
+    return Colors;
+  }
+
+  get labels() {
+    return Labels;
   }
 
 }
