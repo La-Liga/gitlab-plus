@@ -15,6 +15,7 @@ import { CardQuantitativoPrincipalComponent } from './components/card-quantitati
 import { CardQuantitativoSecundarioComponent } from './components/card-quantitativo-secundario/card-quantitativo-secundario.component';
 import { QuantidadeTelasOverviewComponent } from './components/quantidade-telas-overview/quantidade-telas-overview.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     CardQuantitativoSecundarioComponent,
     IssueOverviewComponent,
     QuantidadeTelasOverviewComponent,
-    NavBarComponent
+    NavBarComponent,
+    QuantityByLabelsComponent
 
   ],
   imports: [
