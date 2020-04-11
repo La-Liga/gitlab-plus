@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Colors } from '../../models/enuns/colors.enum';
+import { Labels } from '../../models/enuns/labels.enum';
 
 @Component({
   selector: 'quantity-by-labels',
@@ -7,8 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class QuantityByLabelsComponent implements OnInit {
 
-  @Input() title: string = 'card';
-  @Input() color: string = '';
+  @Input() title: string;
+  @Input() color: string = Colors.Primary;
+  @Input() label: string = Labels.Todo;
+
+  quantity: number = 0;
   classColorBorder: string = 'border-left-';
   classColorText: string = 'text-';
 

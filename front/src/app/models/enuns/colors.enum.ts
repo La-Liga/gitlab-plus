@@ -1,6 +1,7 @@
-enum Colors {
+export enum Colors {
   Primary = 'primary',
   Success = 'success',
   Warning = 'warning',
-  Info = 'info'
+  Info = 'info',
+  Olive = 'olive'
 }

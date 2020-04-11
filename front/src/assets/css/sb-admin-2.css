@@ -5027,6 +5027,17 @@ a.badge-dark:focus, a.badge-dark.focus {
   transition: width 0.6s ease;
 }
 
+.progress-bar2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #AAAD04;
+  transition: width 0.6s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .progress-bar {
     transition: none;
@@ -9366,6 +9377,10 @@ button.bg-dark:focus {
   color: #4e73df !important;
 }
 
+.text-olive {
+  color: #AAAD04 !important;
+}
+
 a.text-primary:hover, a.text-primary:focus {
   color: #224abe !important;
 }
@@ -9817,6 +9832,18 @@ a:focus {
 
 .border-top-primary {
   border-top: 0.25rem solid #4e73df !important;
+}
+
+.border-left-olive {
+  border-left: 0.25rem solid #AAAD04 !important;
+}
+
+.border-bottom-olive {
+  border-bottom: 0.25rem solid #AAAD04 !important;
+}
+
+.border-top-olive {
+  border-top: 0.25rem solid #AAAD04 !important;
 }
 
 .border-left-secondary {
