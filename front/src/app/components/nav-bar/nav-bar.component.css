@@ -2,3 +2,12 @@
   border-bottom: 1px solid #ccc;
   box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15) !important;
 }
+
+.navbar-menu li a.nav-link {
+  color: #5a5c69 !important;
+}
+
+.navbar-menu li a.nav-link:hover {
+  color: #ccc !important;
+}
+
