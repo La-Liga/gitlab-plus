@@ -26,7 +26,7 @@ export class IssuesComponent implements OnInit {
   // labels: ['Backlog do Produto','To-Do','Doing', 'Staging', 'Review', 'Ready to Production'];
   // users: ['Rodrigo Gonçalves', 'Paulo', 'Emmiliano', "Wescley", "Wanderson","Cobol"];
 
-  teste = 'sprint'
+  teste = 'sprint';
   constructor() { }
 
   ngOnInit(): void {

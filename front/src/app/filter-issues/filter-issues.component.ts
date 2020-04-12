@@ -8,9 +8,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FilterIssuesComponent implements OnInit {
 
 
-  sprints= ['Sprint 1', 'Sprint 2', 'Sprint 3'];
-  labels= ['Backlog do Produto','To-Do','Doing', 'Staging', 'Review', 'Ready to Production'];
-  users= ['Rodrigo Gonçalves', 'Paulo', 'Emmiliano', "Wescley", "Wanderson","Cobol"];
+  sprints = ['Sprint 1', 'Sprint 2', 'Sprint 3'];
+  labels = ['Backlog do Produto', 'To-Do', 'Doing', 'Staging', 'Review', 'Ready to Production'];
+  users = ['Rodrigo Gonçalves', 'Paulo', 'Emmiliano', 'Wescley', 'Wanderson', 'Cobol'];
 
 
   constructor() { }

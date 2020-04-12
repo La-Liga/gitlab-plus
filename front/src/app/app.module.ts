@@ -18,6 +18,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { IssuesScreenComponent } from './issues-screen/issues-screen.component';
 import { IssuesComponent } from './pages/issues/issues.component';
 import { FilterIssuesComponent } from './filter-issues/filter-issues.component';
+import { IssuesTableComponent } from './issues-table/issues-table.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FilterIssuesComponent } from './filter-issues/filter-issues.component';
     NavBarComponent,
     IssuesScreenComponent,
     IssuesComponent,
-    FilterIssuesComponent
+    FilterIssuesComponent,
+    IssuesTableComponent
   ],
   imports: [
     BrowserModule,
