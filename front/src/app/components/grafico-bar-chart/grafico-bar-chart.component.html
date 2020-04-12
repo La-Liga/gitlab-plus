@@ -1,0 +1,17 @@
+<div class="card shadow mb-2">
+    <div class="card-header py-3 d-flex flex-row  justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+    </div>
+    <div class="card-body">
+        <div class="chart pt-2 pb-2">
+            <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"
+                [colors]="barChartColors">
+            </canvas>
+        </div>
+    </div>
+</div>
