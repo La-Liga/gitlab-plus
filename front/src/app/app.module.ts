@@ -12,7 +12,7 @@ import { IssuesScreenComponent } from './components/issues-screen/issues-screen.
 import { IssuesComponent } from './pages/issues/issues.component';
 import { FilterIssuesComponent } from './components/filter-issues/filter-issues.component';
 import { IssuesTableComponent } from './components/issues-table/issues-table.component';
-import { IssueOverviewComponent } from './pages/issue-overview/issue-overview.component';
+import { IssueOverviewComponent } from './components/issue-overview/issue-overview.component';
 import { GraficoBarChartComponent } from './components/grafico-bar-chart/grafico-bar-chart.component';
 import { GraficoPieComponent } from './components/grafico-pie/grafico-pie.component';
 import { CardQuantitativoPrincipalComponent } from './components/card-quantitativo-principal/card-quantitativo-principal.component';
