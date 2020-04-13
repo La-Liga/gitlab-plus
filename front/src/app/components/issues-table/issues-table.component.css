@@ -1,0 +1,29 @@
+
+.circle {
+    border-radius: 5px;
+    border: 2px solid;
+    /* padding: 5px;  */
+    width: 100px;
+    height: 25px; 
+    text-align: center ;
+    /* padding-top:0px; */
+  }
+  .opened-closed{
+    border-color: #93968E;
+  }
+  .nagative-estimation{
+    color:#FD0000;
+    font-weight: bold;
+  }
+  .positive-estimation{
+    color:#7FC008;
+    font-weight: bold;
+  }
+
+  .avatar{
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+  }
+

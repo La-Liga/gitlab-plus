@@ -8,7 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { IssueOverviewComponent } from './pages/issue-overview/issue-overview.component';
+import { IssuesScreenComponent } from './components/issues-screen/issues-screen.component';
+import { IssuesComponent } from './pages/issues/issues.component';
+import { FilterIssuesComponent } from './components/filter-issues/filter-issues.component';
+import { IssuesTableComponent } from './components/issues-table/issues-table.component';
+import { IssueOverviewComponent } from './components/issue-overview/issue-overview.component';
 import { GraficoBarChartComponent } from './components/grafico-bar-chart/grafico-bar-chart.component';
 import { GraficoPieComponent } from './components/grafico-pie/grafico-pie.component';
 import { CardQuantitativoPrincipalComponent } from './components/card-quantitativo-principal/card-quantitativo-principal.component';
@@ -29,8 +33,11 @@ import { QuantityByLabelsComponent } from './components/quantity-by-labels/quant
     IssueOverviewComponent,
     QuantidadeTelasOverviewComponent,
     NavBarComponent,
+    IssuesScreenComponent,
+    IssuesComponent,
+    FilterIssuesComponent,
+    IssuesTableComponent,
     QuantityByLabelsComponent
-
   ],
   imports: [
     BrowserModule,
