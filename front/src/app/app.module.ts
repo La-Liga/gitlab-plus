@@ -20,6 +20,8 @@ import { CardQuantitativoSecundarioComponent } from './components/card-quantitat
 import { QuantidadeTelasOverviewComponent } from './components/quantidade-telas-overview/quantidade-telas-overview.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
+import { AuthService } from './pages/auth.service';
+import { AuthGuard } from './pages/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { QuantityByLabelsComponent } from './components/quantity-by-labels/quant
     AppRoutingModule,
     ChartsModule
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
