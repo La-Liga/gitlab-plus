@@ -1,18 +1,18 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow nav-custom">
-    <div class="collapse navbar-collapse">
+    <div routerLink="/dashboard" class="collapse navbar-collapse">
         <a class="navbar-brand" href="#">Gitlab + |</a>
         <ul class="navbar-nav mr-auto navbar-menu">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a routerLink="/login" class="nav-link" href="#">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Dashboard</a>
+                <a routerLink="/dashboard" class="nav-link" href="#">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Issues</a>
+                <a routerLink="/issues" class="nav-link" href="#">Issues</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Burndown</a>
+                <a routerLink="/burndown" class="nav-link" href="#">Burndown</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
