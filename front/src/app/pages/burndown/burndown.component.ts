@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./burndown.component.css']
 })
 export class BurndownComponent implements OnInit {
+  sprints = ['Sprint 1', 'Sprint 2', 'Sprint 3'];
 
   public pieChartOptions: ChartOptions = {
     responsive: true,
