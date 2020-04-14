@@ -1,3 +1,4 @@
+import { BurndownComponent } from './pages/burndown/burndown.component';
 
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -37,7 +38,8 @@ import { QuantityByLabelsComponent } from './components/quantity-by-labels/quant
     IssuesComponent,
     FilterIssuesComponent,
     IssuesTableComponent,
-    QuantityByLabelsComponent
+    QuantityByLabelsComponent,
+    BurndownComponent
   ],
   imports: [
     BrowserModule,
