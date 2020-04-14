@@ -8,7 +8,9 @@ import { IssuesComponent } from './pages/issues/issues.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'issues', component: IssuesComponent }
+  { path: 'issues', component: IssuesComponent },
+  { path: 'burndown', component: IssuesComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 
 ];
 
