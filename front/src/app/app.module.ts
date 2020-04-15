@@ -20,6 +20,10 @@ import { CardQuantitativoSecundarioComponent } from './components/card-quantitat
 import { QuantidadeTelasOverviewComponent } from './components/quantidade-telas-overview/quantidade-telas-overview.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
+import { AuthService } from './pages/login/auth.service';
+import { AuthGuard } from './pages/auth-guard.service';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -42,9 +46,10 @@ import { QuantityByLabelsComponent } from './components/quantity-by-labels/quant
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
