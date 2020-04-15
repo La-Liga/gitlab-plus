@@ -22,7 +22,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
 import { AuthService } from './pages/login/auth.service';
 import { AuthGuard } from './pages/auth-guard.service';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -49,7 +49,7 @@ import { FormsModule }   from '@angular/forms';
     ChartsModule,
     FormsModule
   ],
-  providers: [AuthService,AuthGuard],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

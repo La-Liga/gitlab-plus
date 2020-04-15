@@ -17,14 +17,12 @@ export class LoginComponent implements OnInit {
     document.querySelector('body').classList.add('bg-gradient-primary');
   }
   // signIn(userTyped: User){
-  signIn(){
-    if(this.user.name==="Rodrigo"
-    && this.user.password === "123456"){
+  signIn() {
+    if (this.user.name === 'Rodrigo'
+      && this.user.password === '123456') {
       this.authService.login();
-    }
-    else{
+    } else {
       this.authService.logout();
     }
   }
-
 }

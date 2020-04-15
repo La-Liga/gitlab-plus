@@ -6,20 +6,17 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   loggedIn = false;
 
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
   isAuthenticated() {
     const promise = new Promise(
       (resolve, reject) => {
-
         resolve(this.loggedIn);
-
       }
     );
     return promise;
   }
 
   login() {
-
     this.router.navigate(['/dashboard']);
     this.loggedIn = true;
   }
