@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent },
   { path: 'issues', canActivate: [AuthGuard], component: IssuesComponent },
   { path: 'burndown', canActivate: [AuthGuard], component: IssuesComponent },
-  { path: '', canActivate: [AuthGuard], redirectTo: 'dashboard', pathMatch: 'full' }
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
 
 ];
 

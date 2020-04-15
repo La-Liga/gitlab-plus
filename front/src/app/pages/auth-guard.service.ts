@@ -8,7 +8,7 @@ import {
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
-import { AuthService } from './auth.service';
+import { AuthService } from './login/auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
           if (authenticated) {
             return true;
           } else {
-            this.router.navigate(['login']);
+            this.router.navigate(['/login']);
             return false;
           }
         }
