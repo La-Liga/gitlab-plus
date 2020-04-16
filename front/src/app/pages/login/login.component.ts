@@ -13,13 +13,11 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {
-    // document.querySelector('body').classList.add('bg-gradient-primary');
-  }
+  ngOnInit(): void {}
   // signIn(userTyped: User){
   signIn() {
-    if (this.user.name === 'Admin'
-      && this.user.password === '123456') {
+    if (this.user.name === 'admin'
+      && this.user.password === 'admin') {
       this.authService.login();
     } else {
       this.authService.logout();
