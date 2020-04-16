@@ -16,11 +16,17 @@ const axiosInstance = axios.create({
 var totalTelasFeitas;
 var totalTelasSprint;
 var totalTelasSprintFeitas;
+var totalToDo;
+var totalStaging;
+var totalRP;
 
 async function obterValores() {
     totalTelasFeitas = await resultCount(process.env.PATH_TELAS_FEITAS);
     totalTelasSprint = await resultCount(process.env.PATH_TELAS_SPRINT);
     totalTelasSprintFeitas = await resultCount(process.env.PATH_TELAS_FEITAS_SPRINT);
+    totalToDo = await resultCount(process.env.PATH_TODO);
+    totalStaging = await resultCount(process.env.PATH_STAGING);
+    totalRP = await resultCount(process.env.PATH_RP);
 }
 
 router.get('/', (req, res, next) => {
@@ -28,6 +34,9 @@ router.get('/', (req, res, next) => {
         res.status(200).send({
             telasFeitas: `${totalTelasFeitas}/${process.env.TOTAL_TELAS}`,
             telasFeitasSprint: `${totalTelasSprintFeitas}/${totalTelasSprint}`,
+            telasToDo: `${totalToDo}`,
+            telasStaging: `${totalStaging}`,
+            telasRP: `${totalRP}`
         });
     });
 });
