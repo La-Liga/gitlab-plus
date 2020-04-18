@@ -1,5 +1,5 @@
-name: Gitlab Plus - Backend
-on: push
+name: Backend
+on: pull_request
 
 jobs:
   build:

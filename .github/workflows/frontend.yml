@@ -1,10 +1,10 @@
-name: Gitlab Plus - Frontend
+name: Frontend
 on: pull_request
 
 
 jobs:
-  lint:
-    name: Lint frontend
+  build:
+    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -17,8 +17,18 @@ jobs:
         with:
           node-version: ${{ matrix.node_version }}
 
-      - name: npm install && npm run lint
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use Node ${{ matrix.node_version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: Install dependencies
         run: |
-          cd front
+          cd back
           npm install
-          npm run lint
+      
+      - name: Install dependencies
+        run: npm run lint
