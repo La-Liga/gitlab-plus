@@ -2,22 +2,26 @@ name: Gitlab Plus - Backend
 on: push
 
 jobs:
-  lint:
-    name: Lint backend
+  build:
+    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [13.x]
 
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Use Node ${{ matrix.node_version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
 
-      - name: npm install && npm run lint
+      - name: Install dependencies
         run: |
           cd back
           npm install
-          npm run lint
+      
+      - name: Install dependencies
+        run: npm run lint

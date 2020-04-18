@@ -1,8 +1,5 @@
 name: Gitlab Plus - Frontend
-on: 
-  pull_request:
-    branches:
-    - master
+on: pull_request
 
 
 jobs:
