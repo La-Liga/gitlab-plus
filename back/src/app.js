@@ -7,6 +7,6 @@ const index = require('./routes/index-route');
 const dashboard = require('./routes/dashboard-route');
 
 app.use('/', index);
-app.use('/dashboard', dashboard)
+app.use('/dashboard', dashboard);
 
 module.exports = app;

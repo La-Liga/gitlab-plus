@@ -16,6 +16,8 @@
         "indent": ["error", 4],
         "complexity": ["error", 2],
         "linebreak-style": 0,
-        "no-console": "off"
+        "no-console": "off",
+        "comma-dangle": ["error", "never"],
+        "func-names": 0
     }
 }
