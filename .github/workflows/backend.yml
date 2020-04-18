@@ -1,13 +1,9 @@
-name: Gitlab Plus - Frontend
-on: 
-  pull_request:
-    branches:
-    - master
-
+name: Gitlab Plus - Backend
+on: push
 
 jobs:
   lint:
-    name: Lint frontend
+    name: Lint backend
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -22,6 +18,6 @@ jobs:
 
       - name: npm install && npm run lint
         run: |
-          cd front
+          cd back
           npm install
           npm run lint
