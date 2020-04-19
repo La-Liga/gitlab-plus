@@ -9,6 +9,8 @@ import { User } from './user';
 })
 export class LoginComponent implements OnInit {
 
+  mensagemerro: string;
+
   user: User = new User();
 
   constructor(private authService: AuthService) { }
@@ -16,10 +18,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
   // signIn(userTyped: User){
   signIn() {
+
     if (this.user.name === 'admin'
       && this.user.password === 'admin') {
       this.authService.login();
     } else {
+      this.mensagemerro = "Usuário ou senha inválido"
       this.authService.logout();
     }
   }

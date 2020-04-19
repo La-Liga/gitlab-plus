@@ -23,6 +23,9 @@
                   <h1 class="h4 text-gray-900 mb-4">Metrics Projects!</h1>
                 </div>
                 <form class="user">
+                <div class="text-danger" role="alert" style="text-align: center;">
+                  {{ mensagemerro }}
+                </div>  
                   <div class="form-group">
                     <input [(ngModel)]="user.name" name="user" type="text" class="form-control form-control-user" id="InputUser" aria-describedby="emailHelp" placeholder="Digite seu usuário...">
                   </div>
