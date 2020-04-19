@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
       && this.user.password === 'admin') {
       this.authService.login();
     } else {
-      this.mensagemerro = "Usuário ou senha inválido"
+      this.mensagemerro = 'Usuário ou senha inválido';
       this.authService.logout();
     }
   }
