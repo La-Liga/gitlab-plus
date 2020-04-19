@@ -28,8 +28,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd back
+          cd front
           npm install
       
       - name: Run lint
-        run: npm run lint
+        run: |
+          cd front
+          npm run lint
