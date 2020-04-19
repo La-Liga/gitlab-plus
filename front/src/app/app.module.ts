@@ -15,8 +15,6 @@ import { IssuesTableComponent } from './components/issues-table/issues-table.com
 import { IssueOverviewComponent } from './components/issue-overview/issue-overview.component';
 import { GraficoBarChartComponent } from './components/grafico-bar-chart/grafico-bar-chart.component';
 import { GraficoPieComponent } from './components/grafico-pie/grafico-pie.component';
-import { CardQuantitativoPrincipalComponent } from './components/card-quantitativo-principal/card-quantitativo-principal.component';
-import { CardQuantitativoSecundarioComponent } from './components/card-quantitativo-secundario/card-quantitativo-secundario.component';
 import { QuantidadeTelasOverviewComponent } from './components/quantidade-telas-overview/quantidade-telas-overview.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
@@ -32,8 +30,6 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     GraficoBarChartComponent,
     GraficoPieComponent,
-    CardQuantitativoPrincipalComponent,
-    CardQuantitativoSecundarioComponent,
     IssueOverviewComponent,
     QuantidadeTelasOverviewComponent,
     NavBarComponent,
