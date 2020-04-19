@@ -18,13 +18,6 @@ const axiosInstance = axios.create({
     })
 });
 
-// const totalTelasSprint;
-// const totalTelasSprintFeitas;
-// const totalToDo;
-// const totalStaging;
-// const totalRP;
-// const totalTelasFeitas;
-
 async function resultCount(path) {
     const total = await axiosInstance
         .get(process.env.PATH_BASE + path, header)

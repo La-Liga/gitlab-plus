@@ -1,5 +1,5 @@
 name: Backend
-on: pull_request
+on: push
 
 jobs:
   build:
@@ -20,11 +20,11 @@ jobs:
 
       - name: Cache NPM dependencies
         uses: actions/cache@v1
-          with:
-            path: ~/.npm
-            key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-            restore-keys: |
-              ${{ runner.os }}-node-
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: |
