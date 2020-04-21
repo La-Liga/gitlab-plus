@@ -3,40 +3,6 @@ on: push
 
 jobs:
 
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [13.x]
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Use Node ${{ matrix.node_version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node_version }}
-
-      - name: Cache NPM dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install dependencies
-        run: |
-          cd front
-          npm install
-      
-      - name: Run lint
-        run: |
-          cd front
-          npm run lint
-
   deploy:
     name: Deploy
     needs: build
@@ -62,6 +28,6 @@ jobs:
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting
+          args: pwd && cd front && deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
