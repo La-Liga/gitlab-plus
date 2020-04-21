@@ -27,10 +27,10 @@
                   {{ mensagemerro }}
                 </div>  
                   <div class="form-group">
-                    <input [(ngModel)]="user.name" name="user" type="text" class="form-control form-control-user" id="InputUser" aria-describedby="emailHelp" placeholder="Digite seu usuário...">
+                    <input (keyup)="mensagemErroChange()" [(ngModel)]="user.name" name="user" type="text" class="form-control form-control-user" id="InputUser" aria-describedby="emailHelp" placeholder="Digite seu usuário..." [ngStyle]="{'border-color' : inputBoxError}">
                   </div>
                   <div class="form-group">
-                    <input [(ngModel)]="user.password" name="senha" type="password" class="form-control form-control-user" id="InputPassword" placeholder="Digite sua senha">
+                    <input (keyup)="mensagemErroChange()" [(ngModel)]="user.password" name="senha" type="password" class="form-control form-control-user" id="InputPassword" placeholder="Digite sua senha" [ngStyle]="{'border-color' : inputBoxError}">
                   </div>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox small">

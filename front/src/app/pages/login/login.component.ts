@@ -10,6 +10,7 @@ import { User } from './user';
 export class LoginComponent implements OnInit {
 
   mensagemerro: string;
+  inputBoxError:string;
 
   user: User = new User();
 
@@ -24,7 +25,12 @@ export class LoginComponent implements OnInit {
       this.authService.login();
     } else {
       this.mensagemerro = 'Usuário ou senha inválido';
+      this.inputBoxError = 'red';
       this.authService.logout();
     }
+  }
+  mensagemErroChange(){
+    this.mensagemerro= '';
+    this.inputBoxError = '#d1d3e2';
   }
 }
