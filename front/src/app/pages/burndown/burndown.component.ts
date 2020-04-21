@@ -1,5 +1,8 @@
-import { ChartOptions } from 'chart.js';
+
 import { Component, OnInit } from '@angular/core';
+
+
+declare var Chart: any;
 
 @Component({
   selector: 'app-burndown',
@@ -9,114 +12,104 @@ import { Component, OnInit } from '@angular/core';
 export class BurndownComponent implements OnInit {
   sprints = ['Sprint 1', 'Sprint 2', 'Sprint 3'];
 
-  /*public pieChartOptions: ChartOptions = {
-    responsive: true,
-    legend: {
-      position: 'top',
-    },
-    plugins: {
-      datalabels: {
-        formatter: (value, ctx) => {
-          const label = ctx.chart.data.labels[ctx.dataIndex];
-          return label;
-        },
-      },
-    }
-  };
-  public pieChartLabels = [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'];
-  public pieChartData: number[] = [300, 500, 100];
-  public pieChartType = 'pie';
-  public pieChartLegend = true;
- 
-  public pieChartColors = [
-    {
-      backgroundColor: ['rgba(255,0,0,0.3)', 'rgba(0,255,0,0.3)', 'rgba(0,0,255,0.3)'],
-    },
-  ];
 
-  public lineChartLegend = true;
-  public lineChartType = 'line';*/
-
-  public lineChartData = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' },
-    { data: [180, 480, 770, 90, 1000, 270, 400], label: 'Series C', yAxisID: 'y-axis-1' }
-  ];
-  public lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  public lineChartOptions: (ChartOptions & { annotation: any }) = {
-    responsive: true,
-    scales: {
-      // We use this empty structure as a placeholder for dynamic theming.
-      xAxes: [{}],
-      yAxes: [
-        {
-          id: 'y-axis-0',
-          position: 'left',
-        },
-        {
-          id: 'y-axis-1',
-          position: 'right',
-          gridLines: {
-            color: 'rgba(255,0,0,0.3)',
-          },
-          ticks: {
-            fontColor: 'red',
-          }
-        }
-      ]
-    },
-    annotation: {
-      annotations: [
-        {
-          type: 'line',
-          mode: 'vertical',
-          scaleID: 'x-axis-0',
-          value: 'March',
-          borderColor: 'orange',
-          borderWidth: 2,
-          label: {
-            enabled: true,
-            fontColor: 'orange',
-            content: 'LineAnno'
-          }
-        },
-      ],
-    },
-  };
-  public lineChartColors = [
-    { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
-    { // red
-      backgroundColor: 'rgba(255,0,0,0.3)',
-      borderColor: 'red',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-    }
-  ];
-  public lineChartLegend = true;
-  public lineChartType = 'line';
-  
- 
 
   constructor() { }
 
+
+  sumArrayUpTo(arrData, index) {
+    var total = 0;
+    for (var i = 0; i <= index; i++) {
+      if (arrData.length > i) {
+        total += arrData[i];
+      }
+    }
+    return total;
+  }
+
+  showBurnDown(elementId, burndownData, scopeChange = []) {
+
+    var speedCanvas = document.getElementById(elementId);
+
+    Chart.defaults.global.defaultFontFamily = "Arial";
+    Chart.defaults.global.defaultFontSize = 14;
+
+    const totalHoursInSprint = burndownData[0];
+    const idealHoursPerDay = totalHoursInSprint / 9;
+    let i = 0;
+
+    var speedData = {
+      labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9", "Day 10"],
+      datasets: [
+        {
+          label: "Burndown",
+          data: burndownData,
+          fill: false,
+          borderColor: "#EE6868",
+          backgroundColor: "#EE6868",
+          lineTension: 0,
+        },
+        {
+          label: "Ideal",
+          borderColor: "#6C8893",
+          backgroundColor: "#6C8893",
+          lineTension: 0,
+          borderDash: [5, 5],
+          fill: false,
+          data: [
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 0)), // 1
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 1)), // 2
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 2)), // 3
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 3)), // 4
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 4)), // 5
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 5)), // 6
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 6)), // 7
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 7)), // 8
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 8)), // 9
+            Math.round(totalHoursInSprint - (idealHoursPerDay * i++) + this.sumArrayUpTo(scopeChange, 9))  // 10
+          ]
+        },
+      ]
+    };
+
+    var chartOptions = {
+      legend: {
+        display: true,
+        position: 'top',
+        labels: {
+          boxWidth: 80,
+          fontColor: 'black'
+        }
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            min: 0,
+            max: Math.round(burndownData[0] * 1.1)
+          }
+        }]
+      }
+    };
+
+    var lineChart = new Chart(speedCanvas, {
+      type: 'line',
+      data: speedData,
+      options: chartOptions
+    });
+
+  }
+
+
+
+
   ngOnInit(): void {
+
+    this.showBurnDown('burndown43', [200, 160, 160, 140, 90, 90, 80], // burndown data 
+      [0, 0, 0, 0, 0, 32, 0, 0, 0, 0]  // scope change
+    );
+
+    // this.showBurnDown();
+    console.log(Chart);
   }
 
 }
