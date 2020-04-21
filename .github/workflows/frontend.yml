@@ -23,10 +23,12 @@ jobs:
         run: |
           cd front
           npm install
+
+      - name: Test path
+        run: pwd
       
       - name: Deploy to Firebase
-      - run: pwd && cd front
-      - uses: w9jds/firebase-action@master
+        uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
