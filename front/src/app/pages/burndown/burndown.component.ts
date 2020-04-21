@@ -18,8 +18,8 @@ export class BurndownComponent implements OnInit {
 
 
   sumArrayUpTo(arrData, index) {
-    var total = 0;
-    for (var i = 0; i <= index; i++) {
+    let total = 0;
+    for (let i = 0; i <= index; i++) {
       if (arrData.length > i) {
         total += arrData[i];
       }
@@ -29,30 +29,30 @@ export class BurndownComponent implements OnInit {
 
   showBurnDown(elementId, burndownData, scopeChange = []) {
 
-    var speedCanvas = document.getElementById(elementId);
+    const speedCanvas = document.getElementById(elementId);
 
-    Chart.defaults.global.defaultFontFamily = "Arial";
+    Chart.defaults.global.defaultFontFamily = 'Arial';
     Chart.defaults.global.defaultFontSize = 14;
 
     const totalHoursInSprint = burndownData[0];
     const idealHoursPerDay = totalHoursInSprint / 9;
     let i = 0;
 
-    var speedData = {
-      labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7", "Day 8", "Day 9", "Day 10"],
+    const speedData = {
+      labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7', 'Day 8', 'Day 9', 'Day 10'],
       datasets: [
         {
-          label: "Burndown",
+          label: 'Burndown',
           data: burndownData,
           fill: false,
-          borderColor: "#EE6868",
-          backgroundColor: "#EE6868",
+          borderColor: '#EE6868',
+          backgroundColor: '#EE6868',
           lineTension: 0,
         },
         {
-          label: "Ideal",
-          borderColor: "#6C8893",
-          backgroundColor: "#6C8893",
+          label: 'Ideal',
+          borderColor: '#6C8893',
+          backgroundColor: '#6C8893',
           lineTension: 0,
           borderDash: [5, 5],
           fill: false,
@@ -72,7 +72,7 @@ export class BurndownComponent implements OnInit {
       ]
     };
 
-    var chartOptions = {
+    const chartOptions = {
       legend: {
         display: true,
         position: 'top',
@@ -91,7 +91,7 @@ export class BurndownComponent implements OnInit {
       }
     };
 
-    var lineChart = new Chart(speedCanvas, {
+    const lineChart = new Chart(speedCanvas, {
       type: 'line',
       data: speedData,
       options: chartOptions
@@ -99,13 +99,11 @@ export class BurndownComponent implements OnInit {
 
   }
 
-
-
-
   ngOnInit(): void {
 
-    this.showBurnDown('burndown43', [200, 160, 160, 140, 90, 90, 80], // burndown data 
-      [0, 0, 0, 0, 0, 32, 0, 0, 0, 0]  // scope change
+    this.showBurnDown('burndown43',
+      [200, 160, 160, 140, 90, 90, 80],
+      [0, 0, 0, 0, 0, 32, 0, 0, 0, 0]
     );
 
     // this.showBurnDown();
