@@ -41,7 +41,7 @@ jobs:
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
-          name: gitlab-plus
+          name: dist
           path: front/dist
 
   deploy:
@@ -55,7 +55,11 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@master
         with:
-          name: gitlab-plus
+          name: dist
+          path: front/dist
+
+      - run: ls front
+      - run: ls front/dist
       
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
