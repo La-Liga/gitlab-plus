@@ -33,6 +33,11 @@ jobs:
           cd front
           npm run lint
 
+      - name: Generate build package
+        run: |
+          cd front
+          npm run build
+
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
