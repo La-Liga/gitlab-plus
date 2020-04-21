@@ -1,18 +1,15 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow nav-custom">
-    <div routerLink="/dashboard" class="collapse navbar-collapse">
-        <a class="navbar-brand" href="#">Gitlab + |</a>
+    <div class="collapse navbar-collapse">
+        <a routerLink="/dashboard" class="navbar-brand" href="#">Gitlab + |</a>
         <ul class="navbar-nav mr-auto navbar-menu">
-            <li class="nav-item active">
-                <a routerLink="/login" class="nav-link" href="#">Home</a>
+            <li class="nav-item">
+                <a routerLink="/dashboard" class="nav-link">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a routerLink="/dashboard" class="nav-link" href="#">Dashboard</a>
+                <a routerLink="/issues" class="nav-link">Issues</a>
             </li>
             <li class="nav-item">
-                <a routerLink="/issues" class="nav-link" href="#">Issues</a>
-            </li>
-            <li class="nav-item">
-                <a routerLink="/burndown" class="nav-link" href="#">Burndown</a>
+                <a routerLink="/burndown" class="nav-link">Burndown</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
@@ -38,7 +35,7 @@
                         Activity Log
                     </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <a (click)="signOut()" class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Logout
                     </a>

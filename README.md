@@ -5,7 +5,11 @@ Projeto opensource para extrair informações do Gitlab e transformar em métric
 ## Informações importantes:
 
 ### Como faço para configurar? ###
-
+```
+cd front
+npm install
+npm start
+```
 
 ### Contribuições possíveis ###
 * Escrever novos testes
