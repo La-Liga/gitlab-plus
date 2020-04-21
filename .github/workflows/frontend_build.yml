@@ -35,5 +35,5 @@ jobs:
         working-directory: ./front
 
       - name: Run test
-        run: npm test
+        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
         working-directory: ./front
