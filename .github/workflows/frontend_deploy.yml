@@ -1,0 +1,28 @@
+name: Frontend
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+    
+      - name: Download Artifact
+        uses: actions/download-artifact@master
+        with:
+          name: dist
+          path: front/dist
+      
+      - name: Deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          PROJECT_PATH: front
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}

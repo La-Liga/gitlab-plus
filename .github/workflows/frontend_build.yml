@@ -1,5 +1,8 @@
-name: Backend
-on: pull_request
+name: Frontend
+on:
+  pull_request:
+    branches:
+      - master
 
 jobs:
 
@@ -25,10 +28,21 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd back
+          cd front
           npm install
       
       - name: Run lint
         run: |
-          cd back
+          cd front
           npm run lint
+
+      - name: Generate build package
+        run: |
+          cd front
+          npm run build
+
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: front/dist
