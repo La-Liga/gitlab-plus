@@ -25,8 +25,8 @@ jobs:
           npm install
       
       - name: Deploy to Firebase
-        run: pwd && cd front
-        uses: w9jds/firebase-action@master
+      - run: pwd && cd front
+      - uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
