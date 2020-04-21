@@ -23,13 +23,11 @@ jobs:
         run: |
           cd front
           npm install
-
-      - name: Test path
-        run: pwd
       
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
         with:
           args: deploy --only hosting
         env:
+          PROJECT_PATH: ./front
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
