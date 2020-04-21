@@ -1,5 +1,5 @@
 name: Frontend
-on: push
+on: pull_request
 
 jobs:
 
@@ -57,9 +57,6 @@ jobs:
         with:
           name: dist
           path: front/dist
-
-      - run: ls front
-      - run: ls front/dist
       
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
