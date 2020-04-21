@@ -33,7 +33,9 @@ jobs:
           npm install
       
       - name: Run lint
-        run: npm run lint
+        run: |
+          cd front
+          npm run lint
 
   deploy:
     name: Deploy
