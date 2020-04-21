@@ -27,22 +27,13 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: |
-          cd front
-          npm install
+        run: npm install
+        working-directory: ./front
       
       - name: Run lint
-        run: |
-          cd front
-          npm run lint
+        run: npm run lint
+        working-directory: ./front
 
-      - name: Generate build package
-        run: |
-          cd front
-          npm run build
-
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: dist
-          path: front/dist
+      - name: Run test
+        run: npm test
+        working-directory: ./front
