@@ -18,10 +18,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node_version }}
-          
+
       - run: |
-        cd front
-        pwd
+          cd front
+          pwd
 
       - name: Cache NPM dependencies
         uses: actions/cache@v1
