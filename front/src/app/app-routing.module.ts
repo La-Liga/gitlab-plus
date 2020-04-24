@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'issues', component: IssuesComponent },
   { path: 'burndown', component: BurndownComponent },
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: 'dashboard', canActivate: [AuthGuard], component: DashboardComponent },
   { path: 'issues', canActivate: [AuthGuard], component: IssuesComponent },
   { path: 'burndown', canActivate: [AuthGuard], component: IssuesComponent },
