@@ -22,6 +22,7 @@ import { QuantityByLabelsComponent } from './components/quantity-by-labels/quant
 import { AuthService } from './pages/login/auth.service';
 import { AuthGuard } from './pages/auth-guard.service';
 import { FormsModule } from '@angular/forms';
+import { AppFilterIssuesBurndownComponent } from './components/app-filter-issues-burndown/app-filter-issues-burndown.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     FilterIssuesComponent,
     IssuesTableComponent,
     QuantityByLabelsComponent,
-    BurndownComponent
+    BurndownComponent,
+    AppFilterIssuesBurndownComponent
   ],
   imports: [
     BrowserModule,
