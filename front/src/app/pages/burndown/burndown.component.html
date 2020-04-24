@@ -2,27 +2,19 @@
 <div id="content-wrapper" class="d-flex flex-column">
     <div id="content">
         <div class="container-fluid">
-            <div class="d-sm-flex align-items-center justify-content-between">
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 class="h3 mb-0 text-gray-800">Burndown</h1>
-            </div>                  
-        </div>
-    </div>
-</div>
-
-<div class="card shadow mb-4">
-    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-        <h6 class="m-0 font-weight-bold text-primary">Filtrar Burndown</h6>
-    </div>
-    <div class="card-body">
-        <div class="pb-2">
+            </div>
             <div class="row">
-                <div class="col-xl-4 col-md-4">
-                    <div class="form-group">
-                        <label for="Sprint">Sprint</label>
-                        <select class="form-control" id="Sprint">
-                            <option *ngFor="let sprint of sprints;">{{ sprint }}</option>
-                        </select>
-                    </div>
+                <div class="col-xl-12 col-md-12">
+                    <app-app-filter-issues-burndown></app-app-filter-issues-burndown>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-md-12 mb-4">
+                    <div style="width:800px;">
+                        <canvas id="burndown43"></canvas>
+                      </div>
                 </div>
             </div>
         </div>
@@ -30,6 +22,4 @@
 </div>
 
 
-      <div style="width:800px;">
-        <canvas id="burndown43"></canvas>
-      </div>
+     
