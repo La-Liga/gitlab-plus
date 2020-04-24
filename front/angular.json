@@ -28,7 +28,7 @@
               "node_modules/jquery/dist/jquery.js",
               "node_modules/popper.js/dist/umd/popper.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
-              "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"
+              "src/assets/js/chart.min.js"
             ]
           },
           "configurations": {
