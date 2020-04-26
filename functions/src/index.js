@@ -1,11 +1,11 @@
-import * as functions from 'firebase-functions';
-import * as admin from 'firebase-admin';
+const functions = require('firebase-functions');
+const admin = require('firebase-admin');
 
 admin.initializeApp(functions.config().firebase);
 
 const db = admin.firestore();
 
-export const receiveIssues = functions.https.onRequest((request, response) => {
+exports.receiveIssues = functions.https.onRequest((request, response) => {
     db.collection('issues').add(request.body);
 
     response.status(201).send({

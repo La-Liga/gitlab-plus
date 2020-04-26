@@ -48,10 +48,3 @@ Thumbs.db
 # Firebase
 .firebase
 
-**/*.js
-**/*.js.map
-
-# Typescript v1 declaration files
-typings/
-
-lib/
