@@ -1,5 +1,6 @@
 {
     "extends" : "airbnb-base",
+    "plugins": ["import"],
     "env": {
         "commonjs": true,
         "es6": false,
@@ -18,6 +19,7 @@
         "linebreak-style": 0,
         "no-console": "off",
         "comma-dangle": ["error", "never"],
-        "func-names": 0
+        "func-names": 0,
+        "import/no-dynamic-require": 0
     }
 }
