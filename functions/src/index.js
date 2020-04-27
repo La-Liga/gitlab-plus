@@ -3,7 +3,7 @@ require('dotenv').config();
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 
-const serviceAccount = require(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+const serviceAccount = require('./credentials.js');
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
