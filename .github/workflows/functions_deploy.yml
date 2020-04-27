@@ -26,9 +26,11 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Get service key
-        run: |
-          echo ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} | base64 -d > credentials.json
-          ls
+        run: echo ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} | base64 -d > ./src/credentials.json
+        working-directory: ./functions
+        
+      - name: Install firebase
+        run: npm i -g firebase-tools
         working-directory: ./functions
         
       - name: Install dependencies
@@ -37,6 +39,6 @@ jobs:
       
       - name: Run deploy function
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
+          GOOGLE_APPLICATION_CREDENTIALS: ./src/credentials.json
         run: firebase deploy --only functions --token ${{ secrets.FIREBASE_TOKEN }}
         working-directory: ./functions
