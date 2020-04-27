@@ -19,3 +19,4 @@ jobs:
         env:
           PROJECT_PATH: functions
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          GCP_SA_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
