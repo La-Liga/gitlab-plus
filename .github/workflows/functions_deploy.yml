@@ -39,6 +39,6 @@ jobs:
       
       - name: Run deploy function
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ./src/credentials.json
+          GOOGLE_APPLICATION_CREDENTIALS: ./credentials.json
         run: firebase deploy --only functions --token ${{ secrets.FIREBASE_TOKEN }}
         working-directory: ./functions
