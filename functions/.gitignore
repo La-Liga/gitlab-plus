@@ -50,4 +50,4 @@ Thumbs.db
 
 .env
 
-src/serviceAccountKey.json
+src/credentials.json
