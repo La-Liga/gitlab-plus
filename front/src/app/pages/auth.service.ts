@@ -1,17 +1,29 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
+
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
 import { Observable } from 'rxjs';
 
 
+
+
+
 @Injectable()
 export class AuthService {
-  user: Observable<firebase.User>;
 
-  constructor(private firebaseAuth: AngularFireAuth) { }
+  user: Observable<firebase.User>;
+  userData: any;
+
+ 
+
+
+
+  constructor(private firebaseAuth: AngularFireAuth, private router: Router) { }
+
+
   isAuthenticated() {
     this.user = this.firebaseAuth.authState;
   }
@@ -22,6 +34,7 @@ export class AuthService {
       .createUserWithEmailAndPassword(email, password)
       .then(value => {
         console.log('Success!', value);
+        this.router.navigate(['/login']);
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
@@ -33,7 +46,9 @@ export class AuthService {
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
+        console.log(value)
         console.log('Nice, it worked!');
+        this.router.navigate(['/dashboard']);
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
@@ -44,5 +59,26 @@ export class AuthService {
     this.firebaseAuth
       .auth
       .signOut();
+      console.log("vc não está autenticado");
+      this.router.navigate(['/login']);
+  }
+
+  logingoogle(){
+    let provider =  new firebase.auth.GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/plus.login');
+    this.testando(provider);
+
+  }
+
+  testando(provider){
+    firebase.auth().signInWithPopup(provider)
+    .then((authData) => {
+      console.log(authData);
+      this.router.navigate(['/login']);
+      console.log("teste");
+    }).catch(function(error) {
+      console.log(error);
+    });
+
   }
 }

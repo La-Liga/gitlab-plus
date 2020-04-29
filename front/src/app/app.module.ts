@@ -22,13 +22,14 @@ import { GraficoPieComponent } from './components/grafico-pie/grafico-pie.compon
 import { QuantidadeTelasOverviewComponent } from './components/quantidade-telas-overview/quantidade-telas-overview.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
-import { AuthService } from './pages/login/auth.service';
+import { AuthService } from './pages/auth.service';
 //import { AuthGuard } from './pages/auth-guard.service';
 import { FormsModule } from '@angular/forms';
 import { AppFilterIssuesBurndownComponent } from './components/app-filter-issues-burndown/app-filter-issues-burndown.component';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 
 
@@ -49,7 +50,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     IssuesTableComponent,
     QuantityByLabelsComponent,
     BurndownComponent,
-    AppFilterIssuesBurndownComponent
+    AppFilterIssuesBurndownComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,

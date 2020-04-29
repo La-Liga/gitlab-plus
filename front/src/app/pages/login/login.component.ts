@@ -1,6 +1,8 @@
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthService } from '../auth.service';
 import { User } from './user';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +17,16 @@ export class LoginComponent implements OnInit {
   mensagemerro: string;
   inputBoxError: string;
 
-  constructor(public authService: AuthService) { }
+   provider = new firebase.auth.GoogleAuthProvider();
+
+  constructor(public authService: AuthService,public afAuth: AngularFireAuth) { }
+
+
+  
+  ngOnInit(): void {
+    const provider = new firebase.auth.GoogleAuthProvider();
+   }
+
 
   signup() {
     this.authService.signup(this.email, this.password);
@@ -25,17 +36,21 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.email, this.password);
-    this.email = this.password = ''; 
+    this.email = this.password = '';
     console.log("teste login");
   }
 
-  logout() {
-    this.authService.logout();
-    console.log("teste logout");
-  }
 
-  ngOnInit(): void {}
-  
+  //login com o google
+  loginGoogle(){
+  this.authService.logingoogle();
+  console.log("teste logingoogle");
+}
+
+
+
+
+
 
   mensagemErroChange() {
     this.mensagemerro = '';
