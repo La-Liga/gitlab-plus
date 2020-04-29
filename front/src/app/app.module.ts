@@ -1,3 +1,6 @@
+import { environment } from './../environments/environment';
+
+
 import { BurndownComponent } from './pages/burndown/burndown.component';
 
 
@@ -20,9 +23,14 @@ import { QuantidadeTelasOverviewComponent } from './components/quantidade-telas-
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
 import { AuthService } from './pages/login/auth.service';
-import { AuthGuard } from './pages/auth-guard.service';
+//import { AuthGuard } from './pages/auth-guard.service';
 import { FormsModule } from '@angular/forms';
 import { AppFilterIssuesBurndownComponent } from './components/app-filter-issues-burndown/app-filter-issues-burndown.component';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+
 
 
 @NgModule({
@@ -47,9 +55,11 @@ import { AppFilterIssuesBurndownComponent } from './components/app-filter-issues
     BrowserModule,
     AppRoutingModule,
     ChartsModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

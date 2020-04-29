@@ -1,28 +1,48 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+
+import { Observable } from 'rxjs';
+
+
 @Injectable()
-
 export class AuthService {
-  loggedIn = false;
+  user: Observable<firebase.User>;
 
-  constructor(private router: Router) { }
+  constructor(private firebaseAuth: AngularFireAuth) { }
   isAuthenticated() {
-    const promise = new Promise(
-      (resolve, reject) => {
-        resolve(this.loggedIn);
-      }
-    );
-    return promise;
+    this.user = this.firebaseAuth.authState;
   }
 
-  login() {
-    this.router.navigate(['/dashboard']);
-    this.loggedIn = true;
+  signup(email: string, password: string) {
+    this.firebaseAuth
+      .auth
+      .createUserWithEmailAndPassword(email, password)
+      .then(value => {
+        console.log('Success!', value);
+      })
+      .catch(err => {
+        console.log('Something went wrong:',err.message);
+      });    
+  }
+
+  login(email: string, password: string) {
+    this.firebaseAuth
+      .auth
+      .signInWithEmailAndPassword(email, password)
+      .then(value => {
+        console.log('Nice, it worked!');
+      })
+      .catch(err => {
+        console.log('Something went wrong:',err.message);
+      });
   }
 
   logout() {
-    this.loggedIn = false;
-    this.router.navigate(['/login']);
+    this.firebaseAuth
+      .auth
+      .signOut();
   }
 }

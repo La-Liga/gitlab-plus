@@ -9,26 +9,34 @@ import { User } from './user';
 })
 export class LoginComponent implements OnInit {
 
+  email: string;
+  password: string;
+
   mensagemerro: string;
   inputBoxError: string;
 
-  user: User = new User();
+  constructor(public authService: AuthService) { }
 
-  constructor(private authService: AuthService) { }
+  signup() {
+    this.authService.signup(this.email, this.password);
+    this.email = this.password = '';
+    console.log("teste signup");
+  }
+
+  login() {
+    this.authService.login(this.email, this.password);
+    this.email = this.password = ''; 
+    console.log("teste login");
+  }
+
+  logout() {
+    this.authService.logout();
+    console.log("teste logout");
+  }
 
   ngOnInit(): void {}
-  // signIn(userTyped: User){
-  signIn() {
+  
 
-    if (this.user.name === 'admin'
-      && this.user.password === 'admin') {
-      this.authService.login();
-    } else {
-      this.mensagemerro = 'Usuário ou senha inválido';
-      this.inputBoxError = 'red';
-      this.authService.logout();
-    }
-  }
   mensagemErroChange() {
     this.mensagemerro = '';
     this.inputBoxError = '#d1d3e2';
