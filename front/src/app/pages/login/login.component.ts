@@ -31,20 +31,17 @@ export class LoginComponent implements OnInit {
   signup() {
     this.authService.signup(this.email, this.password);
     this.email = this.password = '';
-    console.log("teste signup");
   }
 
   login() {
     this.authService.login(this.email, this.password);
     this.email = this.password = '';
-    console.log("teste login");
   }
 
 
   //login com o google
   loginGoogle(){
   this.authService.logingoogle();
-  console.log("teste logingoogle");
 }
 
 

@@ -30,16 +30,11 @@
                     <input (keyup)="mensagemErroChange()" [(ngModel)]="password" name="senha" type="password" class="form-control form-control-user" id="InputPassword" placeholder="Digite sua senha" [ngStyle]="{'border-color' : inputBoxError}">
                   </div>
                   <div class="form-group">
-                   <!-- <div class="custom-control custom-checkbox small">
-                      <input type="checkbox" class="custom-control-input" id="customCheck">
-                      <label class="custom-control-label" for="customCheck">Remember Me</label>
-                    </div>-->
                   </div>
                   <a (click)="login()" style="cursor: pointer;" class="btn btn-primary text-light btn-user btn-block"> Login </a>
-                 <!-- <a (click)="signup()" style="cursor: pointer;" class="btn btn-primary text-light btn-user btn-block"> Cadastrar </a>-->
                   <hr>
-                  <a  (click)="loginGoogle()" class="btn btn-google btn-user btn-block">
-                    <i class="fab fa-google fa-fw"></i> Login com o Google
+                  <a  (click)="loginGoogle()" class="btn btn-google btn-user btn-block text-light">
+                    <i class="fab fa-google fa-fw text-light"></i> Login com o Google
                   </a>
                 </form>
                 <hr>

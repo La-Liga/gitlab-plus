@@ -16,6 +16,8 @@ export class AuthService {
 
   user: Observable<firebase.User>;
   userData: any;
+  fotoimagem:string;
+
 
  
 
@@ -66,18 +68,16 @@ export class AuthService {
   logingoogle(){
     let provider =  new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/plus.login');
-    this.testando(provider);
-
+    this.googleAuth(provider);
   }
 
-  testando(provider){
+  googleAuth(provider){
     firebase.auth().signInWithPopup(provider)
     .then((authData) => {
-      console.log(authData);
-      this.router.navigate(['/login']);
-      console.log("teste");
+    let foto = authData.user.photoURL;
+    this.router.navigate(['/dashboard']);
     }).catch(function(error) {
-      console.log(error);
+    console.log(error);
     });
 
   }
