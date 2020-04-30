@@ -1,16 +1,18 @@
+
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Injectable()
 
-export class AuthService {
-  loggedIn = false;
+export class AuthServiceGuards {
+   loggedIn = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public authService: AuthService) { }
   isAuthenticated() {
     const promise = new Promise(
       (resolve, reject) => {
-        resolve(this.loggedIn);
+        resolve(this.authService.loggedIn);
       }
     );
     return promise;
@@ -18,11 +20,11 @@ export class AuthService {
 
   login() {
     this.router.navigate(['/dashboard']);
-    this.loggedIn = true;
+    this.authService.loggedIn = true;
   }
 
   logout() {
-    this.loggedIn = false;
+    this.authService.loggedIn = false;
     this.router.navigate(['/login']);
   }
 }

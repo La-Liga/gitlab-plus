@@ -1,6 +1,8 @@
+import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthService } from '../auth.service';
 import { User } from './user';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-login',
@@ -9,26 +11,33 @@ import { User } from './user';
 })
 export class LoginComponent implements OnInit {
 
+  email: string;
+  password: string;
   mensagemerro: string;
   inputBoxError: string;
 
-  user: User = new User();
+  provider = new firebase.auth.GoogleAuthProvider();
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService, public afAuth: AngularFireAuth) { }
 
-  ngOnInit(): void {}
-  // signIn(userTyped: User){
-  signIn() {
+  ngOnInit(): void {
+    const provider = new firebase.auth.GoogleAuthProvider();
+   }
 
-    if (this.user.name === 'admin'
-      && this.user.password === 'admin') {
-      this.authService.login();
-    } else {
-      this.mensagemerro = 'Usuário ou senha inválido';
-      this.inputBoxError = 'red';
-      this.authService.logout();
-    }
+  signup() {
+    this.authService.signup(this.email, this.password);
+    this.email = this.password = '';
   }
+
+  login() {
+    this.authService.login(this.email, this.password);
+    this.email = this.password = '';
+  }
+
+  loginGoogle() {
+  this.authService.logingoogle();
+}
+
   mensagemErroChange() {
     this.mensagemerro = '';
     this.inputBoxError = '#d1d3e2';
