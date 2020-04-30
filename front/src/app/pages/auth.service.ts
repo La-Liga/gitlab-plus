@@ -46,8 +46,8 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then(value => {
         console.log(value)
-        console.log('Nice, it worked!');
         this.loggedIn = true;
+        console.log('Nice, it worked!');
         this.router.navigate(['/dashboard']);
       })
       .catch(err => {
@@ -73,6 +73,7 @@ export class AuthService {
     firebase.auth().signInWithPopup(provider)
     .then((authData) => {
     let foto = authData.user.photoURL;
+    this.loggedIn = true;
     this.router.navigate(['/dashboard']);
     }).catch(function(error) {
     console.log(error);
