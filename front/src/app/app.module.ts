@@ -1,4 +1,4 @@
-import { environment } from './../environments/environment';
+import { environment } from '../environments/environment';
 
 
 import { BurndownComponent } from './pages/burndown/burndown.component';
