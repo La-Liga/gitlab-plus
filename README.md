@@ -1,5 +1,7 @@
 # Gitlab Plus #
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/76a9bb7a1c49453e9c86e0939c53396c)](https://app.codacy.com/gh/Indra-JPs/gitlab-plus?utm_source=github.com&utm_medium=referral&utm_content=Indra-JPs/gitlab-plus&utm_campaign=Badge_Grade_Dashboard)
+
 Projeto opensource para extrair informações do Gitlab e transformar em métricas ágeis dando mais visibilidade ao time Scrum/Kanban.
 
 ## Informações importantes:
