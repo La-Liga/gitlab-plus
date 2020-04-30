@@ -1,3 +1,4 @@
+import { AuthServiceGuards } from './pages/auth-service-guard';
 import { environment } from '../environments/environment';
 
 
@@ -23,7 +24,7 @@ import { QuantidadeTelasOverviewComponent } from './components/quantidade-telas-
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
 import { AuthService } from './pages/auth.service';
-//import { AuthGuard } from './pages/auth-guard.service';
+import { AuthGuard } from './pages/auth-guard.service';
 import { FormsModule } from '@angular/forms';
 import { AppFilterIssuesBurndownComponent } from './components/app-filter-issues-burndown/app-filter-issues-burndown.component';
 
@@ -61,7 +62,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
   ],
-  providers: [AuthService],
+  providers: [AuthService,AuthServiceGuards,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,13 +6,14 @@ import { AuthService } from './auth.service';
 @Injectable()
 
 export class AuthServiceGuards {
-  // loggedIn = false;
+   loggedIn = false;
 
   constructor(private router: Router, public authService: AuthService) { }
   isAuthenticated() {
     const promise = new Promise(
       (resolve, reject) => {
         resolve(this.authService.loggedIn);
+        console.log("teste");
       }
     );
     return promise;

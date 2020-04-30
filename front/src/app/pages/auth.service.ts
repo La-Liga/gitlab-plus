@@ -20,11 +20,6 @@ export class AuthService {
   loggedIn = false;
 
 
-
- 
-
-
-
   constructor(private firebaseAuth: AngularFireAuth, private router: Router) { }
 
 
@@ -52,6 +47,7 @@ export class AuthService {
       .then(value => {
         console.log(value)
         console.log('Nice, it worked!');
+        this.loggedIn = true;
         this.router.navigate(['/dashboard']);
       })
       .catch(err => {
