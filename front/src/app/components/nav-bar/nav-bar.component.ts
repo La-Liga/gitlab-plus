@@ -15,7 +15,6 @@ export class NavBarComponent implements OnInit {
 
   logout() {
     this.authService.logout();
-    console.log("teste logout");
   }
 
 

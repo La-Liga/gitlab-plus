@@ -13,20 +13,16 @@ export class LoginComponent implements OnInit {
 
   email: string;
   password: string;
-
   mensagemerro: string;
   inputBoxError: string;
 
-   provider = new firebase.auth.GoogleAuthProvider();
+  provider = new firebase.auth.GoogleAuthProvider();
 
-  constructor(public authService: AuthService,public afAuth: AngularFireAuth) { }
+  constructor(public authService: AuthService, public afAuth: AngularFireAuth) { }
 
-
-  
   ngOnInit(): void {
     const provider = new firebase.auth.GoogleAuthProvider();
    }
-
 
   signup() {
     this.authService.signup(this.email, this.password);
@@ -38,16 +34,9 @@ export class LoginComponent implements OnInit {
     this.email = this.password = '';
   }
 
-
-  //login com o google
-  loginGoogle(){
+  loginGoogle() {
   this.authService.logingoogle();
 }
-
-
-
-
-
 
   mensagemErroChange() {
     this.mensagemerro = '';

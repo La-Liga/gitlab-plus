@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-console.log("iniciando dashboard");
+    console.log('iniciando dashboard');
   }
 
   get colors() {
