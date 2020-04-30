@@ -13,7 +13,6 @@ export class AuthServiceGuards {
     const promise = new Promise(
       (resolve, reject) => {
         resolve(this.authService.loggedIn);
-        console.log("teste");
       }
     );
     return promise;

@@ -1,22 +1,14 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-
-
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
-
 import { Observable } from 'rxjs';
-
-
-
 
 @Injectable()
 export class AuthService {
 
   user: Observable<firebase.User>;
   userData: any;
-  fotoimagem:string;
-
   loggedIn = false;
 
 
@@ -36,8 +28,8 @@ export class AuthService {
         this.router.navigate(['/login']);
       })
       .catch(err => {
-        console.log('Something went wrong:',err.message);
-      });    
+        console.log('Something went wrong:', err.message);
+      });
   }
 
   login(email: string, password: string) {
@@ -45,39 +37,32 @@ export class AuthService {
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
-        console.log(value)
         this.loggedIn = true;
-        console.log('Nice, it worked!');
         this.router.navigate(['/dashboard']);
       })
       .catch(err => {
-        console.log('Something went wrong:',err.message);
+        console.log('Something went wrong:', err.message);
       });
   }
 
   logout() {
-    this.firebaseAuth
-      .auth
-      .signOut();
-      console.log("vc não está autenticado");
-      this.router.navigate(['/login']);
+    this.firebaseAuth.auth.signOut();
+    this.router.navigate(['/login']);
   }
 
-  logingoogle(){
-    let provider =  new firebase.auth.GoogleAuthProvider();
+  logingoogle() {
+    const provider = new firebase.auth.GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/plus.login');
     this.googleAuth(provider);
   }
 
-  googleAuth(provider){
+  googleAuth(provider) {
     firebase.auth().signInWithPopup(provider)
-    .then((authData) => {
-    let foto = authData.user.photoURL;
-    this.loggedIn = true;
-    this.router.navigate(['/dashboard']);
-    }).catch(function(error) {
-    console.log(error);
-    });
-
+      .then((authData) => {
+        this.loggedIn = true;
+        this.router.navigate(['/dashboard']);
+      }).catch( (error) => {
+        console.log(error);
+      });
   }
 }

@@ -8,7 +8,6 @@ import { IssuesComponent } from './pages/issues/issues.component';
 import { BurndownComponent } from './pages/burndown/burndown.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { AuthGuard } from './pages/auth-guard.service';
-//import { AuthGuard } from './pages/auth-guard.service';
 
 
 const routes: Routes = [

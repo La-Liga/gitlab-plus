@@ -62,7 +62,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
   ],
-  providers: [AuthService,AuthServiceGuards,AuthGuard],
+  providers: [AuthService, AuthServiceGuards, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
