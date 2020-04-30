@@ -20,6 +20,7 @@
         "no-console": "off",
         "comma-dangle": ["error", "never"],
         "func-names": 0,
-        "import/no-dynamic-require": 0
+        "import/no-dynamic-require": 0,
+        "import/no-unresolved": 0
     }
 }
