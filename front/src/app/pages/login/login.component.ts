@@ -1,3 +1,4 @@
+import { Colors } from './../../models/enuns/colors.enum';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
@@ -23,6 +24,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     const provider = new firebase.auth.GoogleAuthProvider();
    }
+
+
+
 
   signup() {
     this.authService.signup(this.email, this.password);

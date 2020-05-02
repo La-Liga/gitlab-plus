@@ -31,6 +31,7 @@ import { AppFilterIssuesBurndownComponent } from './components/app-filter-issues
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { MensagemErrorComponent } from './mensagem-error/mensagem-error.component';
 
 
 
@@ -52,7 +53,8 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     QuantityByLabelsComponent,
     BurndownComponent,
     AppFilterIssuesBurndownComponent,
-    CadastroComponent
+    CadastroComponent,
+    MensagemErrorComponent
   ],
   imports: [
     BrowserModule,
