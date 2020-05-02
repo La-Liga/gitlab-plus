@@ -25,7 +25,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
 import { AuthService } from './pages/auth.service';
 import { AuthGuard } from './pages/auth-guard.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppFilterIssuesBurndownComponent } from './components/app-filter-issues-burndown/app-filter-issues-burndown.component';
 
 import { AngularFireModule } from 'angularfire2';
@@ -59,6 +59,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     AppRoutingModule,
     ChartsModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule
   ],
