@@ -53,8 +53,7 @@ import { MensagemErrorComponent } from './mensagem-error/mensagem-error.componen
     QuantityByLabelsComponent,
     BurndownComponent,
     AppFilterIssuesBurndownComponent,
-    CadastroComponent,
-    MensagemErrorComponent
+    CadastroComponent
   ],
   imports: [
     BrowserModule,

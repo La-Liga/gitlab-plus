@@ -20,10 +20,6 @@
                   <h1 class="h4 text-gray-900 mb-4">Metrics!</h1>
                 </div>
                 <form class="user">
-                    <app-mensagem-error
-                    [mensagem]="'Logado com sucesso'"
-                    [color]="'success'">
-                </app-mensagem-error>
                   <div class="form-group">
                     <input (keyup)="mensagemErroChange()"  [(ngModel)]="email" name="user" type="text" class="form-control form-control-user" id="InputUser" aria-describedby="emailHelp" placeholder="Digite seu usuário..." [ngStyle]="{'border-color' : inputBoxError}">
                   </div>
@@ -53,18 +49,3 @@
     </div>
   </div>
 </div>
-
-
-    <app-mensagem-error
-        [mensagem]="'Mensagem de erro personalizada'"
-        [color]="'success'">
-    </app-mensagem-error>
-
-    <app-mensagem-error
-        [mensagem]="'Mensagem de erro personalizada'"
-        [color]="'primary'">
-    </app-mensagem-error>
-
-
-
-
