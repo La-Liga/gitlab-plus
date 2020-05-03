@@ -4,6 +4,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase';
 import { Observable } from 'rxjs';
 
+import { NgZone } from '@angular/core';
+
 @Injectable()
 export class AuthService {
 
@@ -12,7 +14,7 @@ export class AuthService {
   loggedIn = false;
 
 
-  constructor(private firebaseAuth: AngularFireAuth, private router: Router) { }
+  constructor(private ngZone: NgZone, private firebaseAuth: AngularFireAuth, private router: Router) { }
 
 
   isAuthenticated() {
@@ -51,16 +53,18 @@ export class AuthService {
   }
 
   logingoogle() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('https://www.googleapis.com/auth/plus.login');
-    this.googleAuth(provider);
+    this.ngZone.run(() => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('https://www.googleapis.com/auth/plus.login');
+      this.googleAuth(provider);
+    });
   }
 
-  googleAuth(provider) {
+   googleAuth(provider) {
     firebase.auth().signInWithPopup(provider)
-      .then((authData) => {
+      .then(async(authData) => {
         this.loggedIn = true;
-        this.router.navigate(['/dashboard']);
+        await this.router.navigate(['/dashboard']);
       }).catch( (error) => {
         console.log(error);
       });

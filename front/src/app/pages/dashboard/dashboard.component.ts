@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Colors } from '../../models/enuns/colors.enum';
 import { Labels } from '../../models/enuns/labels.enum';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,10 +10,17 @@ import { Labels } from '../../models/enuns/labels.enum';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private ngZone: NgZone, private router: Router){
+    router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.ngOnInit();
+      }
+    })
+  }
   ngOnInit(): void {
-    console.log('iniciando dashboard');
+    this.ngZone.run(() => {
+      console.log('iniciando dashboard');
+    })
   }
 
   get colors() {
