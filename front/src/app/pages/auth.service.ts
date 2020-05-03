@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -10,9 +11,10 @@ export class AuthService {
   user: Observable<firebase.User>;
   userData: any;
   loggedIn = false;
+  mensagemerro1: Object;
 
 
-  constructor(private firebaseAuth: AngularFireAuth, private router: Router) { }
+  constructor(private firebaseAuth: AngularFireAuth, private router: Router) {  }
 
 
   isAuthenticated() {
@@ -37,12 +39,29 @@ export class AuthService {
       .auth
       .signInWithEmailAndPassword(email, password)
       .then(value => {
+        console.log("then")
         this.loggedIn = true;
         this.router.navigate(['/dashboard']);
       })
       .catch(err => {
-        console.log('Something went wrong:', err.message);
+        this.verificarmensagemerro(err);
       });
+  }
+
+  verificarmensagemerro(error){
+    console.log("erro")
+    if(error.code){
+      if(error.code === 'auth/weak-password'){
+        return "A senha deve conter no mínimo 6 caracteres";
+      }
+        else if(error.code === 'auth/invalid-email'){
+          return "O email informado é invalido";
+        }
+          else {
+            return "O email informado ja está cadastrado";
+        }
+    }
+
   }
 
   logout() {
