@@ -40,7 +40,6 @@ export class AuthService {
         .auth
         .signInWithEmailAndPassword(email, password)
         .then(value => {
-          console.log("then")
           this.loggedIn = true;
           this.router.navigate(['/dashboard']);
         })

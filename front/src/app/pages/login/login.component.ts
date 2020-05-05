@@ -32,13 +32,8 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.email, this.password)
-      .then((succ) => {
-        console.log('Success!', succ);
-      })
       .catch((erro) => {
-        console.log(erro)
         this.mensagemerro = erro.message;
-        console.log(this.mensagemerro);
       });
     this.email = this.password = '';
   }
