@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   mensagemerro: string;
-  inputBoxError: string;
+
+
 
   provider = new firebase.auth.GoogleAuthProvider();
 
@@ -30,7 +31,15 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authService.login(this.email, this.password);
+    this.authService.login(this.email, this.password)
+      .then((succ) => {
+        console.log('Success!', succ);
+      })
+      .catch((erro) => {
+        console.log(erro)
+        this.mensagemerro = erro.message;
+        console.log(this.mensagemerro);
+      });
     this.email = this.password = '';
   }
 
@@ -38,8 +47,4 @@ export class LoginComponent implements OnInit {
   this.authService.logingoogle();
 }
 
-  mensagemErroChange() {
-    this.mensagemerro = '';
-    this.inputBoxError = '#d1d3e2';
-  }
 }

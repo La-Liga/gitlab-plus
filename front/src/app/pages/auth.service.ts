@@ -11,7 +11,6 @@ export class AuthService {
   user: Observable<firebase.User>;
   userData: any;
   loggedIn = false;
-  mensagemerro1: Object;
 
 
   constructor(private firebaseAuth: AngularFireAuth, private router: Router) {  }
@@ -35,34 +34,25 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    this.firebaseAuth
-      .auth
-      .signInWithEmailAndPassword(email, password)
-      .then(value => {
-        console.log("then")
-        this.loggedIn = true;
-        this.router.navigate(['/dashboard']);
-      })
-      .catch(err => {
-        this.verificarmensagemerro(err);
-      });
-  }
-
-  verificarmensagemerro(error){
-    console.log("erro")
-    if(error.code){
-      if(error.code === 'auth/weak-password'){
-        return "A senha deve conter no mínimo 6 caracteres";
+    const promise = new Promise(
+      (resolve, reject) => {
+        this.firebaseAuth
+        .auth
+        .signInWithEmailAndPassword(email, password)
+        .then(value => {
+          console.log("then")
+          this.loggedIn = true;
+          this.router.navigate(['/dashboard']);
+        })
+        .catch(err => {
+          reject(err);
+        });
       }
-        else if(error.code === 'auth/invalid-email'){
-          return "O email informado é invalido";
-        }
-          else {
-            return "O email informado ja está cadastrado";
-        }
-    }
+    );
+    return promise;
 
   }
+
 
   logout() {
     this.firebaseAuth.auth.signOut();
