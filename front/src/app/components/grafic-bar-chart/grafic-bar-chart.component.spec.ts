@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GraficoPieComponent } from './grafico-pie.component';
+import { GraficBarChartComponent } from './grafic-bar-chart.component';
 
-describe('GraficoPieComponent', () => {
-  let component: GraficoPieComponent;
-  let fixture: ComponentFixture<GraficoPieComponent>;
+describe('GraficoBarChartComponent', () => {
+  let component: GraficBarChartComponent;
+  let fixture: ComponentFixture<GraficBarChartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GraficoPieComponent ]
+      declarations: [ GraficBarChartComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GraficoPieComponent);
+    fixture = TestBed.createComponent(GraficBarChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

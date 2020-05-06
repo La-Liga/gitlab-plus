@@ -21,28 +21,28 @@
                 </div>
                 <form class="user">
                 <div class="text-danger" role="alert" style="text-align: center;">
-                  {{ mensagemerro }}
+                  {{ messageError }}
                 </div>
                   <div class="form-group">
-                    <input (keyup)="mensagemErroChange()"  [(ngModel)]="email" name="user" type="text" class="form-control form-control-user" id="InputUser" aria-describedby="emailHelp" placeholder="Digite seu usuário..." [ngStyle]="{'border-color' : inputBoxError}">
+                    <input (keyup)="messageErrorChange()"  [(ngModel)]="email" name="user" type="text" class="form-control form-control-user" id="InputUser" aria-describedby="emailHelp" placeholder="Enter Username..." [ngStyle]="{'border-color' : inputBoxError}">
                   </div>
                   <div class="form-group">
-                    <input (keyup)="mensagemErroChange()" [(ngModel)]="password" name="senha" type="password" class="form-control form-control-user" id="InputPassword" placeholder="Digite sua senha" [ngStyle]="{'border-color' : inputBoxError}">
+                    <input (keyup)="messageErrorChange()" [(ngModel)]="password" name="senha" type="password" class="form-control form-control-user" id="InputPassword" placeholder="Enter Password" [ngStyle]="{'border-color' : inputBoxError}">
                   </div>
                   <div class="form-group">
                   </div>
                   <a (click)="login()" style="cursor: pointer;" class="btn btn-primary text-light btn-user btn-block"> Login </a>
                   <hr>
                   <a  (click)="loginGoogle()" class="btn btn-google btn-user btn-block text-light">
-                    <i class="fab fa-google fa-fw text-light"></i> Login com o Google
+                    <i class="fab fa-google fa-fw text-light"></i> Sign in with Google
                   </a>
                 </form>
                 <hr>
                 <div class="text-center">
-                  <a class="small" href="forgot-password.html">Esqueceu a senha?</a>
+                  <a class="small" href="forgot-password.html">Forgot your password?</a>
                 </div>
                 <div class="text-center">
-                  <a class="small" routerLink="/cadastro">Clique aqui para criar uma conta</a>
+                  <a class="small" routerLink="/register">Don't have an account yet? Register now</a>
                 </div>
               </div>
             </div>

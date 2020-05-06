@@ -1,15 +1,15 @@
 import { AuthService } from '../auth.service';
 import { Component, OnInit } from '@angular/core';
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class CadastroComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   email: string;
   password: string;
-  mensagemerro: string;
+  messageError: string;
   inputBoxError: string;
 
   constructor(public authService: AuthService) { }
@@ -23,8 +23,8 @@ export class CadastroComponent implements OnInit {
     console.log('teste signup');
   }
 
-  mensagemErroChange() {
-    this.mensagemerro = '';
+  messageErrorChange() {
+    this.messageError = '';
     this.inputBoxError = '#d1d3e2';
   }
 }

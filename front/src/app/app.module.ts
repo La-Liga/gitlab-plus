@@ -18,9 +18,9 @@ import { IssuesComponent } from './pages/issues/issues.component';
 import { FilterIssuesComponent } from './components/filter-issues/filter-issues.component';
 import { IssuesTableComponent } from './components/issues-table/issues-table.component';
 import { IssueOverviewComponent } from './components/issue-overview/issue-overview.component';
-import { GraficoBarChartComponent } from './components/grafico-bar-chart/grafico-bar-chart.component';
-import { GraficoPieComponent } from './components/grafico-pie/grafico-pie.component';
-import { QuantidadeTelasOverviewComponent } from './components/quantidade-telas-overview/quantidade-telas-overview.component';
+import { GraficBarChartComponent } from './components/grafic-bar-chart/grafic-bar-chart.component';
+import { GraficPieComponent } from './components/grafic-pie/grafic-pie.component';
+import { ScreensNumberOverviewComponent } from './components/screens-number-overview/screens-number-overview.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { QuantityByLabelsComponent } from './components/quantity-by-labels/quantity-by-labels.component';
 import { AuthService } from './pages/auth.service';
@@ -30,7 +30,7 @@ import { AppFilterIssuesBurndownComponent } from './components/app-filter-issues
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 
@@ -40,10 +40,10 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    GraficoBarChartComponent,
-    GraficoPieComponent,
+    GraficBarChartComponent,
+    GraficPieComponent,
     IssueOverviewComponent,
-    QuantidadeTelasOverviewComponent,
+    ScreensNumberOverviewComponent,
     NavBarComponent,
     IssuesScreenComponent,
     IssuesComponent,
@@ -52,7 +52,7 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     QuantityByLabelsComponent,
     BurndownComponent,
     AppFilterIssuesBurndownComponent,
-    CadastroComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

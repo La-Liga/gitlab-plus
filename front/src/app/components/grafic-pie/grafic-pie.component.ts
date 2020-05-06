@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 // import { Label } from 'ng2-charts';
 
 @Component({
-  selector: 'app-grafico-pie',
-  templateUrl: './grafico-pie.component.html',
-  styleUrls: ['./grafico-pie.component.css']
+  selector: 'app-grafic-pie',
+  templateUrl: './grafic-pie.component.html',
+  styleUrls: ['./grafic-pie.component.css']
 })
-export class GraficoPieComponent implements OnInit {
+export class GraficPieComponent implements OnInit {
 
   informacaoapi: Array<number> = [26, 48, 26];
 

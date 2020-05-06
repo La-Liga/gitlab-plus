@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   email: string;
   password: string;
-  mensagemerro: string;
+  messageError: string;
   inputBoxError: string;
 
   provider = new firebase.auth.GoogleAuthProvider();
@@ -38,8 +38,8 @@ export class LoginComponent implements OnInit {
   this.authService.logingoogle();
 }
 
-  mensagemErroChange() {
-    this.mensagemerro = '';
+  messageErrorChange() {
+    this.messageError = '';
     this.inputBoxError = '#d1d3e2';
   }
 }

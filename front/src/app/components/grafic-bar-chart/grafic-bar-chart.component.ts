@@ -3,11 +3,11 @@ import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 
 @Component({
-  selector: 'app-grafico-bar-chart',
-  templateUrl: './grafico-bar-chart.component.html',
-  styleUrls: ['./grafico-bar-chart.component.css']
+  selector: 'app-grafic-bar-chart',
+  templateUrl: './grafic-bar-chart.component.html',
+  styleUrls: ['./grafic-bar-chart.component.css']
 })
-export class GraficoBarChartComponent implements OnInit  {
+export class GraficBarChartComponent implements OnInit  {
   public barChartOptions: ChartOptions = {
     responsive: true,
   };
