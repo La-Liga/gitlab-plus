@@ -20,28 +20,24 @@
                                     <h1 class="h4 text-gray-900 mb-4">Metrics!</h1>
                                 </div>
                                 <form class="user" [formGroup]="formularioDeUsuario">
-                                    <div class="text-danger" role="alert" style="text-align: center;">
-                                    {{ mensagemerro }}
-                                    </div>
                                     <div class="form-group">
-                                        <input  (keyup)="mensagemErroChange()" formControlName="nome" name="name" type="text"
+                                        <input  formControlName="nome" name="name" type="text"
                                         class="form-control form-control-user" id="InputName"
-                                        placeholder="Digite seu nome..." [ngStyle]="{'border-color' : inputBoxError}">
+                                        placeholder="Digite seu nome...">
                                     </div>
                                     <div class="form-group">
-                                        <input (keyup)="mensagemErroChange()" formControlName="email" name="user" type="email"
+                                        <input formControlName="email" name="user" type="email"
                                         class="form-control form-control-user" id="InputUser" aria-describedby="emailHelp"
-                                        placeholder="Digite seu email..." [ngStyle]="{'border-color' : inputBoxError}">
+                                        placeholder="Digite seu email...">
                                     </div>
                                     <div class="form-group">
-                                        <input (keyup)="mensagemErroChange()" formControlName="confEmail" name="confUser" type="confEmail"
+                                        <input formControlName="confEmail" name="confUser" type="confEmail"
                                         class="form-control form-control-user" id="InputUserMail" aria-describedby="emailHelp"
-                                        placeholder="Confirme seu email..." [ngStyle]="{'border-color' : inputBoxError}">
+                                        placeholder="Confirme seu email...">
                                     </div>
                                     <div class="form-group">
-                                        <input (keyup)="mensagemErroChange()" formControlName="password" name="senha" type="password"
-                                        class="form-control form-control-user" id="InputPassword" placeholder="Digite sua senha"
-                                        [ngStyle]="{'border-color' : inputBoxError}">
+                                        <input formControlName="password" name="senha" type="password"
+                                        class="form-control form-control-user" id="InputPassword" placeholder="Digite sua senha">
                                     </div>
                                     <div class="form-group">
                                     </div>

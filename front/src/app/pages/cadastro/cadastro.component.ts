@@ -2,19 +2,19 @@ import { AuthService } from '../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormValidations } from '../form-validations';
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.css']
 })
+
 export class CadastroComponent implements OnInit {
 
-  // nome: string;
-  // email: string;
-  // confEmail: string;
-  // password: string;
-  // mensagemerro: string;
-  // inputBoxError: string;
+  nome: string;
+  email: string;
+  confEmail: string;
+  password: string;
 
   formularioDeUsuario: FormGroup;
 
@@ -27,5 +27,9 @@ export class CadastroComponent implements OnInit {
       confEmail: [null, [FormValidations.equalsTo('email')]],
       password: [null, Validators.required],
     });
+  }
+  signup() {
+    this.authService.signup(this.email, this.password);
+    this.email = this.password = '';
   }
 }

@@ -28,13 +28,8 @@ export class AuthService {
         this.router.navigate(['/login']);
       })
       .catch(err => {
-        this.teste();
         console.log('Something went wrong:', err.message);
       });
-  }
-
-  teste(){
-    alert('teste');
   }
 
   login(email: string, password: string) {
@@ -46,7 +41,6 @@ export class AuthService {
         this.router.navigate(['/dashboard']);
       })
       .catch(err => {
-        console.log("teste");
         console.log('Something went wrong:', err.message);
       });
   }
