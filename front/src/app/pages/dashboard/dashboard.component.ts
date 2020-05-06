@@ -10,17 +10,17 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private ngZone: NgZone, private router: Router){
+  constructor(private ngZone: NgZone, private router: Router) {
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.ngOnInit();
       }
-    })
+    });
   }
   ngOnInit(): void {
     this.ngZone.run(() => {
       console.log('iniciando dashboard');
-    })
+    });
   }
 
   get colors() {

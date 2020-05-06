@@ -62,7 +62,7 @@ export class AuthService {
 
    googleAuth(provider) {
     firebase.auth().signInWithPopup(provider)
-      .then(async(authData) => {
+      .then(async (authData) => {
         this.loggedIn = true;
         await this.router.navigate(['/dashboard']);
       }).catch( (error) => {
