@@ -1,7 +1,6 @@
 import { AuthService } from '../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormValidations } from '../form-validations';
 
 @Component({
   selector: 'app-cadastro',
@@ -24,7 +23,7 @@ export class CadastroComponent implements OnInit {
     this.formularioDeUsuario = this.fb.group( {
       nome: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
-      confEmail: [null, [FormValidations.equalsTo('email')]],
+      confEmail: [null, [Validators.required, Validators.email]],
       password: [null, Validators.required],
     });
   }
