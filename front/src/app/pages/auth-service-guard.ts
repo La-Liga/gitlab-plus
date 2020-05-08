@@ -20,7 +20,7 @@ export class AuthServiceGuards {
 
   login() {
     this.router.navigate(['/dashboard']);
-    this.authService.loggedIn = true;
+    // this.authService.loggedIn = true;
   }
 
   logout() {

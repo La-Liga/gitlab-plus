@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label } from 'ng2-charts';
 
@@ -19,8 +19,10 @@ export class GraficoBarChartComponent implements OnInit  {
     {backgroundColor: ['rgb(26, 89, 214 )', 'rgb(252, 191, 29)', 'rgb(56, 135, 52)']}
   ];
 
-  constructor() { }
+  constructor(private ngZone: NgZone) { }
 
   ngOnInit() {
+    this.ngZone.run(() => {
+    });
   }
 }
