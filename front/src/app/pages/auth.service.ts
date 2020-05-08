@@ -1,3 +1,4 @@
+import { LoginComponent } from './login/login.component';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -13,9 +14,7 @@ export class AuthService {
   userData: any;
   loggedIn = false;
 
-
   constructor(private ngZone: NgZone, private firebaseAuth: AngularFireAuth, private router: Router) { }
-
 
   isAuthenticated() {
     this.user = this.firebaseAuth.authState;
@@ -35,17 +34,24 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-    this.firebaseAuth
-      .auth
-      .signInWithEmailAndPassword(email, password)
-      .then(value => {
-        this.loggedIn = true;
-        this.router.navigate(['/dashboard']);
-      })
-      .catch(err => {
-        console.log('Something went wrong:', err.message);
-      });
+    const promise = new Promise(
+      (resolve, reject) => {
+        this.firebaseAuth
+        .auth
+        .signInWithEmailAndPassword(email, password)
+        .then(value => {
+          this.loggedIn = true;
+          this.router.navigate(['/dashboard']);
+        })
+        .catch(err => {
+          reject(err);
+        });
+      }
+    );
+    return promise;
+
   }
+
 
   logout() {
     this.firebaseAuth.auth.signOut();

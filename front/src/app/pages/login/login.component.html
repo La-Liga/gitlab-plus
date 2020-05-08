@@ -1,16 +1,16 @@
 <div class="container">
 
-  <!-- Outer Row --> 
+  <!-- Outer Row -->
   <div class="row justify-content-center">
 
     <div class="col-xl-5 col-lg-3 col-md-4">
 
       <div class="card-o-hidden-border-0-shadow-lg-my-5">
         <div class="card-body p-0">
-         <!-- Nested Row within Card Body--> 
+         <!-- Nested Row within Card Body-->
           <div class="row">
             <div class="col-lg-6">
-            </div> 
+            </div>
             <div class="col-lg-12">
               <div class="p-5">
                 <div align="center" class="center">
@@ -24,12 +24,10 @@
                   {{ mensagemerro }}
                 </div>
                   <div class="form-group">
-                    <input (keyup)="mensagemErroChange()"  [(ngModel)]="email" name="user" type="text" class="form-control form-control-user" id="InputUser" aria-describedby="emailHelp" placeholder="Digite seu usuário..." [ngStyle]="{'border-color' : inputBoxError}">
+                    <input  [(ngModel)]="email" name="user" type="text" class="form-control form-control-user" id="InputUser" aria-describedby="emailHelp" placeholder="Digite seu usuário...">
                   </div>
                   <div class="form-group">
-                    <input (keyup)="mensagemErroChange()" [(ngModel)]="password" name="senha" type="password" class="form-control form-control-user" id="InputPassword" placeholder="Digite sua senha" [ngStyle]="{'border-color' : inputBoxError}">
-                  </div>
-                  <div class="form-group">
+                    <input  [(ngModel)]="password" name="senha" type="password" class="form-control form-control-user" id="InputPassword" placeholder="Digite sua senha">
                   </div>
                   <a (click)="login()" style="cursor: pointer;" class="btn btn-primary text-light btn-user btn-block"> Login </a>
                   <hr>
