@@ -1,0 +1,108 @@
+{
+    "issues": [
+        {
+            "state" : "opened",
+            "description" : "Melhoria do Layout da tela Filha",
+            "iid" : 6,
+            "type": "dev",
+            "projectId": "1",
+            "assignee" : {
+                "state" : "active",
+                "id" : 1,
+                "name" : "Administrator",
+                "web_url" : "https://gitlab.example.com/root",
+                "avatar_url" : null,
+                "username" : "root"
+             },
+            "milestoneCreate": "2016-01-04",
+            "estimate": "",
+            "spend": [
+                {
+                    "total": 10,
+                    "date": "07/2020"
+                },
+                {
+                    "total": 4,
+                    "date": "08/2020"
+                }
+            ],
+            "merge_request": {
+                "spend": [
+                    {
+                        "total": 10,
+                        "date": "07/2020"
+                    },
+                    {
+                        "total": 4,
+                        "date": "08/2020"
+                    }
+                ]
+            }
+        },
+        {
+            "state" : "opened",
+            "description" : "Melhoria do fluxo da tela Pai",
+            "iid" : 7,
+            "type": "dev",
+            "projectId": "1",
+            "milestoneCreate": "2016-01-04",
+            "estimate": "",
+            "spend": [
+                {
+                    "total": 17,
+                    "date": "07/2020"
+                },
+                {
+                    "total": 8,
+                    "date": "08/2020"
+                }
+            ]
+        },
+        {
+            "state" : "opened",
+            "description" : "Melhoria do fluxo da tela Pai",
+            "iid" : 8,
+            "type": "rework",
+            "projectId": "1",
+            "milestoneCreate": "2016-01-04",
+            "estimate": "",
+            "spend": [
+                {
+                    "total": 17,
+                    "date": "07/2020"
+                },
+                {
+                    "total": 8,
+                    "date": "08/2020"
+                }
+            ]
+        }
+    ]
+}
+
+
+Collection - Temporizadores
+
+Tempo gasto com desenvolvimento em Junho
+Tempo gasto com teste em Junho
+Tempo gasto com Revisão em Pares em Junho
+Tempo gasto com Bugs internos (encontrados em nossos processos de teste)
+Tempo gasto com Bugs externos (encontrados quando sai daqui de JPA)
+
+5/7 milestone 11
+20/07 milestone 12
+
+
+issue #1 
+milestone 12
+07/07/2020
+estimate 12h
+spend 6h
+09/07/2020
+spend 4h
+12/07/2020
+
+spend 4h
+03/08/2020
+
+julho
